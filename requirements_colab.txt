@@ -1,0 +1,7 @@
+# Minimal dependencies for Google Colab (torch/transformers already present)
+networkx==3.1
+python-docx==1.2.0
+pytest==7.4.0
+google-generativeai>=0.5.0
+requests>=2.31.0
+huggingface_hub>=0.23.0

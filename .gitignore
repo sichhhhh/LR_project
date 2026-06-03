@@ -1,0 +1,43 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Tests cache
+.pytest_cache/
+
+# Generated output (do NOT commit, but keep the directory itself)
+output/*
+!output/.gitkeep
+
+# Local model files (do NOT commit — too large, not needed for install)
+*.gguf
+*.bin
+*.pt
+*.safetensors
+model/relation_classifier/
+
+# Research / НИР source documents (do NOT commit)
+NIR_Bykova_ArgumentMining.*
+*.odt
+unpacked_nir/
+unpacked_bykova/
+
+# Environment / secrets
+.env
+
+# Raw annotated data (generated locally, gitignored)
+data/annotated/
+
+# Editor configs
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

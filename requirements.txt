@@ -1,0 +1,19 @@
+networkx==3.1
+python-docx==1.2.0
+pytest==7.4.0
+
+# LLM providers (install whichever you use)
+google-generativeai>=0.5.0   # for --provider gemini
+requests>=2.31.0              # for --provider ollama (HTTP API)
+
+# Hugging Face — загрузка GGUF-модели через setup.sh / setup.bat
+huggingface_hub>=0.23.0
+
+# Optional: for Jinja2 template support in generate_brief.py
+jinja2>=3.1.0
+
+# Module I (ArgumentMining-main) dependencies — needed only for run_full_pipeline.py
+# torch>=2.0.0
+# transformers==4.40.0
+# safetensors>=0.4.3
+# razdel>=0.5.0

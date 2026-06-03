@@ -1,0 +1,55 @@
+╔══════════════════════════════════════════════════════════════╗
+║              АНАЛИТИЧЕСКАЯ СПРАВКА ПО ДЕЛУ                  ║
+╠══════════════════════════════════════════════════════════════╣
+║ Документ:   {{ graph.doc_id }}
+║ Дата:       {{ graph.metadata.get('date', 'не указана') }}
+║ Источник:   {{ graph.source_file }}
+╚══════════════════════════════════════════════════════════════╝
+
+1. ПОЗИЦИЯ СТОРОНЫ / ОСНОВНОЙ ТЕЗИС
+{% if summary.main_claim %}
+   {{ summary.main_claim.text }}
+   (Уверенность модели: {{ "%.1f"|format(summary.main_claim.confidence * 100) }}%)
+{% else %}
+   Не удалось определить основную позицию.
+{% endif %}
+
+2. ОБОСНОВАНИЕ ПОЗИЦИИ
+   2.1 Правовые основания и нормы:
+{% if summary.evidence %}
+{% for node in summary.evidence %}
+   - {{ node.text }} (conf: {{ "%.2f"|format(node.confidence) }})
+{% endfor %}
+{% else %}
+   —
+{% endif %}
+
+   2.2 Логические доводы:
+{% if summary.premises %}
+{% for node in summary.premises %}
+   - {{ node.text }} (conf: {{ "%.2f"|format(node.confidence) }})
+{% endfor %}
+{% else %}
+   —
+{% endif %}
+
+3. ВОЗРАЖЕНИЯ ПРОТИВОПОЛОЖНОЙ СТОРОНЫ
+{% if summary.rebuttals %}
+{% for node in summary.rebuttals %}
+   - {{ node.text }} (conf: {{ "%.2f"|format(node.confidence) }})
+{% endfor %}
+{% else %}
+   В проанализированном тексте возражения не выявлены.
+{% endif %}
+
+4. ВЫВОД
+{% if summary.conclusion %}
+   {{ summary.conclusion.text }}
+   (Уверенность модели: {{ "%.1f"|format(summary.conclusion.confidence * 100) }}%)
+{% else %}
+   Не удалось сформировать вывод.
+{% endif %}
+
+──────────────────────────────────────────────────────────────
+Сформировано автоматически. Требует верификации юриста.
+──────────────────────────────────────────────────────────────

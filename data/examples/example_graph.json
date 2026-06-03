@@ -1,0 +1,55 @@
+{
+  "doc_id": "doc_001",
+  "source_file": "example_input.jsonl",
+  "metadata": {},
+  "nodes": [
+    {
+      "id": "n0",
+      "text": "Истец просит признать договор недействительным.",
+      "label": "CLAIM",
+      "confidence": 0.92,
+      "position": 0
+    },
+    {
+      "id": "n1",
+      "text": "Согласно ст. 168 ГК РФ, сделка, нарушающая требования закона, ничтожна.",
+      "label": "EVIDENCE",
+      "confidence": 0.87,
+      "position": 1
+    },
+    {
+      "id": "n2",
+      "text": "Ответчик полагает, что договор соответствует требованиям закона.",
+      "label": "REBUTTAL",
+      "confidence": 0.74,
+      "position": 2
+    },
+    {
+      "id": "n3",
+      "text": "Суд признаёт доводы истца обоснованными и удовлетворяет иск.",
+      "label": "CLAIM",
+      "confidence": 0.95,
+      "position": 3
+    }
+  ],
+  "edges": [
+    {
+      "source": "n1",
+      "target": "n0",
+      "relation": "support",
+      "confidence": 0.8
+    },
+    {
+      "source": "n2",
+      "target": "n0",
+      "relation": "attack",
+      "confidence": 0.8
+    },
+    {
+      "source": "n1",
+      "target": "n3",
+      "relation": "support",
+      "confidence": 0.8
+    }
+  ]
+}

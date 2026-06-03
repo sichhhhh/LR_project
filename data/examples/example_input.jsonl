@@ -1,0 +1,4 @@
+{"doc_id": "doc_001", "position": 0, "text": "Истец просит признать договор недействительным.", "label": "CLAIM", "confidence": 0.92}
+{"doc_id": "doc_001", "position": 1, "text": "Согласно ст. 168 ГК РФ, сделка, нарушающая требования закона, ничтожна.", "label": "EVIDENCE", "confidence": 0.87}
+{"doc_id": "doc_001", "position": 2, "text": "Ответчик полагает, что договор соответствует требованиям закона.", "label": "REBUTTAL", "confidence": 0.74}
+{"doc_id": "doc_001", "position": 3, "text": "Суд признаёт доводы истца обоснованными и удовлетворяет иск.", "label": "CLAIM", "confidence": 0.95}
